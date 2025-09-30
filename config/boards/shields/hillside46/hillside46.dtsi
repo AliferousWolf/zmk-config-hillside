@@ -11,7 +11,7 @@
 
 #include <dt-bindings/zmk/matrix_transform.h>
 
-#include <hillside46-layout.dtsi>
+#include <"hillside46-layout.dtsi">
 
 
 
