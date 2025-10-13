@@ -35,15 +35,15 @@
 /* QWERTY
  * -------------------------------------------------------------------------------------------------------------------------------------
  * | `     |   Q   |   W   |   E   |   R   |   T   |-----------------------------------|   Y   |   U   |   I   |   O   |   P   | BKSPC |
- * | TAB   |   A   |   S   |   D   |   F   |   G   |-----------------------------------|   H   |   J   |   K   |   L   |   ;   |RSFT'" |
- * | CTRL  |   Z   |   X   |   C   |   V   |   B   |  ESC  |-------------------|  CAPS |   N   |   M   |   ,   |   .   |   /   | ENTER |
+ * | TAB   |   A   |   S   |   D   |   F   |   G   |-----------------------------------|   H   |   J   |   K   |   L   |   ;   | ENTER |
+ * | CTRL  |   Z   |   X   |   C   |   V   |   B   |  ESC  |-------------------|  CAPS |   N   |   M   |   ,   |   .   |   /   |   '   |
  *                                 |  GUI  |  ALT  | SPACE |  Nav  |---|  Sym  | SHIFT |  GUI  |  GUI  |
  */
                         bindings = <
 &gresc         &kp  Q        &kp  W        &kp  E        &kp  R        &kp  T                                                                         &kp  Y        &kp  U        &kp  I        &kp  O        &kp  P        &kp  BSPC
-&mt LSHIFT TAB &kp  A        &kp  S        &kp  D        &kp  F        &kp  G                                                                         &kp  H        &kp  J        &kp  K        &kp  L        &kp  SEMI     &mt RSHIFT SQT  
-&kp  LCTRL     &kp  Z        &kp  X        &kp  C        &kp  V        &kp  B        &kp  ESC                                           &kp CAPS      &kp  N        &kp  M        &kp  COMMA    &kp  DOT      &kp  SLASH    &kp  ENTER
-                                                         &kp  LGUI     &kp  LALT     &kp SPACE    &mo  NAV_L            &mo  SYM_L      &kp  SHIFT    &kp  RGUI     &kp  RGUI
+&mt LSHIFT TAB &kp  A        &kp  S        &kp  D        &kp  F        &kp  G                                                                         &kp  H        &kp  J        &kp  K        &kp  L        &kp  SEMI     &kp  ENTER  
+&kp  LCTRL     &kp  Z        &kp  X        &kp  C        &kp  V        &kp  B        &kp  ESC                                           &kp CAPS      &kp  N        &kp  M        &kp  COMMA    &kp  DOT      &kp  SLASH    &kp  SQT
+                                                         &kp  LGUI     &kp  LALT     &kp SPACE    &mo  NAV_L            &mo  SYM_L      &kp  SPACE    &kp  RGUI     &kp  RGUI
                         >;
 			
                         sensor-bindings = <&inc_dec_kp PG_DN PG_UP &inc_dec_kp C_VOL_DN C_VOL_UP>;
