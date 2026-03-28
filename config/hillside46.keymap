@@ -29,16 +29,16 @@
                 default_layer {
 /* QWERTY
  * -------------------------------------------------------------------------------------------------------------------------------------
- * | `     |   Q   |   W   |   E   |   R   |   T   |-----------------------------------|   Y   |   U   |   I   |   O   |   P   | BKSPC |
+ * | `ESC  |   Q   |   W   |   E   |   R   |   T   |-----------------------------------|   Y   |   U   |   I   |   O   |   P   | BKSPC |
  * | TAB   |   A   |   S   |   D   |   F   |   G   |-----------------------------------|   H   |   J   |   K   |   L   |   ;   |   '   |
  * | CTRL  |   Z   |   X   |   C   |   V   |   B   | MINUS |-------------------| EQUAL |   N   |   M   |   ,   |   .   |   /   | ENTER |
- *                                 |  GUI  |  ALT  | SPACE |  Nav  |---|  Sym  | SHIFT |  GUI  |  GUI  |
+ *                                 |       |ALT ENT| SPACE |  Nav  |---|  Sym  | SHIFT |  GUI  |       |
  */
                         bindings = <
-&gresc         &kp Q  &kp W  &kp E  &kp R  &kp T                                                           &kp Y     &kp U  &kp I       &kp O    &kp P       &kp BSPC
-&mt LSHIFT TAB &kp A  &kp S  &kp D  &kp F  &kp G                                                           &kp H     &kp J  &kp K       &kp L    &kp SEMI    &kp SQT  
-&kp LCTRL      &kp Z  &kp X  &kp C  &kp V  &kp B     &kp MINUS                                  &kp CAPS   &kp N     &kp M  &kp COMMA   &kp DOT  &kp SLASH   &kp ENTER
-                                    &none  &kp LALT  &kp SPACE  &mo NAV_L            &mo SYM_L  &kp SPACE  &kp RGUI  &none
+&gresc         &kp Q  &kp W  &kp E  &kp R  &kp T                                                                 &kp Y     &kp U  &kp I       &kp O    &kp P       &kp BSPC
+&mt LSHIFT TAB &kp A  &kp S  &kp D  &kp F  &kp G                                                                 &kp H     &kp J  &kp K       &kp L    &kp SEMI    &kp SQT  
+&kp LCTRL      &kp Z  &kp X  &kp C  &kp V  &kp B           &kp MINUS                                  &kp EQUAL  &kp N     &kp M  &kp COMMA   &kp DOT  &kp SLASH   &kp ENTER
+                                    &none  &mt LALT ENTER  &kp SPACE  &mo NAV_L            &mo SYM_L  &kp SPACE  &kp RGUI  &none
                         >;
 			
                         sensor-bindings = <&inc_dec_kp PG_DN PG_UP &inc_dec_kp C_VOL_DN C_VOL_UP>;
@@ -57,7 +57,7 @@
 &trans   &kp N1    &kp N2    &kp N3    &kp N4    &kp N5                                                               &kp N6     &kp N7     &kp N8   &kp N9     &kp N0      &trans
 &trans   &kp F1    &kp F2    &kp F3    &kp F4    &kp F5                                                               &kp HOME   &kp LEFT   &kp UP   &kp DOWN   &kp RIGHT   &kp END
 &trans   &kp F6    &kp F7    &kp F8    &kp F9    &kp F10    &trans                                        &trans      &kp LBKT   &kp RBKT   &trans   &trans     &trans      &trans
-                                       &trans    &trans     &trans      &none               &mo ADJ_L     &trans      &kp RALT   &none 
+                                       &trans    &trans     &trans      &trans              &mo ADJ_L     &trans      &kp RALT   &none 
                         >;
 			
                         sensor-bindings = <&inc_dec_kp PG_DN PG_UP &inc_dec_kp C_VOL_DN C_VOL_UP>;
@@ -72,10 +72,10 @@
  *                                 |       |       |       | ADJ_L  |---|      |       |  ALT  |       |
  */
                         bindings = <
-&trans  &kp EXCL  &kp AT   &kp HASH  &kp DOLLAR &kp PERCENT                                                 &kp CARET   &kp AMPS   &kp ASTRK &kp LPAR   &kp RPAR    &kp DEL
-&trans  &kp F1    &kp F2   &kp F3    &kp F4     &kp F5                                                      &kp HOME    &kp LEFT   &kp UP    &kp DOWN   &kp RIGHT   &kp END
-&trans  &kp F6    &kp F7   &kp F8    &kp F9     &kp F10     &kp Undo                            &kp  Redo   &kp C_MUTE  &kp C_PP   &trans    &trans     &none       &trans
-                                                &none       &trans     &trans       &mo ADJ_L   &trans      &kp RALT   &none
+&trans  &kp EXCL  &kp AT   &kp HASH  &kp DOLLAR  &kp PERCENT                                                 &kp CARET   &kp AMPS   &kp ASTRK  &kp LPAR   &kp RPAR    &kp DEL
+&trans  &kp F1    &kp F2   &kp F3    &kp F4      &kp F5                                                      &kp HOME    &kp LEFT   &kp UP     &kp DOWN   &kp RIGHT   &kp END
+&trans  &kp F6    &kp F7   &kp F8    &kp F9      &kp F10     &kp Undo                             &kp  Redo  &kp C_MUTE  &kp C_PP   &trans     &trans     &trans      &trans
+                                     &none       &trans      &trans    &mo ADJ_L          &trans  &kp RALT   &trans      &none
                         >;
 			
                         sensor-bindings = <&inc_dec_kp PG_DN PG_UP &inc_dec_kp C_VOL_DN C_VOL_UP>;
@@ -86,13 +86,13 @@
  * -------------------------------------------------------------------------------------------------------------------------------------
  * |       |       |       |       |       |STD_UNL|-----------------------------------|       |  F11  |  F12  |Prt Scr|       |       |
  * |OUT_BLE| BT 0  | BT 1  | BT 2  | BT 3  | BT 4  |-----------------------------------|       |  \|   |       |       |       |       |
- * |OUT_USB|       |       |       |       |       | BT CLR|-------------------| RESET |       |       |       | EP_OFF| EP_ON | BOOTL |
+ * |OUT_USB|       |       |       |       |       | BT CLR|-------------------| CAPS  |       |       |       | EP_OFF| EP_ON | BOOTL |
  *                                 |       |       |       |       |---|       |       |       |       |
  */
                         bindings = <
 &gresc        &none        &none        &none        &none        &studio_unlock                                                                     &none   &kp F11   &kp F12   &kp PRINTSCREEN   &none              &trans
 &out OUT_BLE  &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4                                                                       &none   &kp BSLH  &none     &none             &none              &none
-&out OUT_USB  &none        &none        &none        &none        &none          &bt BT_CLR                                         &sys_reset       &none   &none     &none     &ext_power EP_ON  &ext_power EP_OFF  &bootloader
+&out OUT_USB  &none        &none        &none        &none        &none          &bt BT_CLR                                         &kp CAPS         &none   &none     &none     &ext_power EP_ON  &ext_power EP_OFF  &bootloader
                                                      &none        &trans         &trans        &trans                 &trans        &trans           &trans  &none 
                         >;
 			
